@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Math Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Speed Math Challenge</h1>
+            <div class="stats-container">
+                <div class="stat">
+                    <i class="fas fa-star"></i>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span id="timer">30</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="correct">0</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-times-circle"></i>
+                    <span id="incorrect">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="mode-screen" class="screen active">
+                <h2>Choose Game Mode</h2>
+                <div class="mode-buttons">
+                    <button data-mode="standard" class="mode-btn">
+                        <i class="fas fa-calculator"></i> Standard Math
+                    </button>
+                    <button data-mode="integer" class="mode-btn">
+                        <i class="fas fa-plus-minus"></i> Integer Math
+                    </button>
+                </div>
+            </div>
+
+            <div id="category-screen" class="screen">
+                <div class="nav-info">
+                    Mode: <span id="selected-mode">Standard Math</span>
+                </div>
+                <h2>Choose a Category</h2>
+                <div class="category-buttons">
+                    <button data-category="addition" class="category-btn">
+                        <i class="fas fa-plus"></i> Addition
+                    </button>
+                    <button data-category="subtraction" class="category-btn">
+                        <i class="fas fa-minus"></i> Subtraction
+                    </button>
+                    <button data-category="multiplication" class="category-btn">
+                        <i class="fas fa-times"></i> Multiplication
+                    </button>
+                    <button data-category="division" class="category-btn">
+                        <i class="fas fa-divide"></i> Division
+                    </button>
+                    <button data-category="mixed" class="category-btn">
+                        <i class="fas fa-random"></i> Mixed
+                    </button>
+                </div>
+                <div class="nav-buttons">
+                    <button id="back-to-mode-btn" class="nav-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                </div>
+            </div>
+
+            <div id="level-screen" class="screen">
+                <div class="nav-info">
+                    Mode: <span id="selected-mode-level">Standard Math</span> | 
+                    Category: <span id="selected-category">Addition</span>
+                </div>
+                <h2>Choose a Level</h2>
+                <div class="level-buttons">
+                    <button data-level="easy" class="level-btn">Easy</button>
+                    <button data-level="medium" class="level-btn">Medium</button>
+                    <button data-level="hard" class="level-btn">Hard</button>
+                </div>
+                <div class="nav-buttons">
+                    <button id="back-to-category-btn" class="nav-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                </div>
+            </div>
+
+            <div id="game-screen" class="screen">
+                <div class="question-container">
+                    <h2 id="question">5 + 7 = ?</h2>
+                </div>
+                
+                <div class="answer-container">
+                    <input type="number" id="answer-input" placeholder="Answer" autofocus>
+                    <button id="submit-btn">Submit</button>
+                    <button id="exit-game-btn" class="exit-btn">
+                        <i class="fas fa-door-open"></i> Exit Game
+                    </button>
+                </div>
+            </div>
+            
+            <div id="result-screen" class="screen">
+                <h2>Game Over!</h2>
+                <div class="results">
+                    <p>Score: <span id="final-score">0</span></p>
+                    <p>Correct: <span id="final-correct">0</span></p>
+                    <p>Incorrect: <span id="final-incorrect">0</span></p>
+                </div>
+                <div class="mode-label">
+                    <span id="mode-played">Standard Math</span> - <span id="category-played">Addition</span> (<span id="level-played">Easy</span>)
+                </div>
+                <div class="result-buttons">
+                    <button id="play-again-btn">Play Again</button>
+                    <button id="back-to-menu-btn">Back to Menu</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
